@@ -6,9 +6,10 @@ use Illuminate\Support\ServiceProvider;
 class AuthServiceProvider extends ServiceProvider
 {
     protected $policies = [
-        \App\Models\Flat::class   => \App\Policies\FlatPolicy::class,
-        \App\Models\Bill::class   => \App\Policies\BillPolicy::class,
-        \App\Models\Tenant::class => \App\Policies\TenantPolicy::class,
+        \App\Models\Flat::class         => \App\Policies\FlatPolicy::class,
+        \App\Models\Bill::class         => \App\Policies\BillPolicy::class,
+        \App\Models\Tenant::class       => \App\Policies\TenantPolicy::class,
+        \App\Models\BillCategory::class => \App\Policies\BillCategoryPolicy::class,
     ];
 
     /**
