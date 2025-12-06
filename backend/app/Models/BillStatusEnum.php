@@ -1,10 +1,8 @@
 <?php
-
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class BillStatusEnum extends Model
+class BillStatusEnum extends TenantModel
 {
-    //
+    protected $fillable = ['name'];
+    protected $casts    = ['id' => 'string'];
 }

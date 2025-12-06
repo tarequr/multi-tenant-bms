@@ -1,10 +1,22 @@
 <?php
-
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Flat extends Model
+class Flat extends TenantModel
 {
-    //
+    protected $fillable = ['flat_number', 'floor', 'status', 'house_owner_id'];
+
+    public function houseOwner()
+    {
+        return $this->belongsTo(User::class, 'house_owner_id');
+    }
+
+    public function tenant()
+    {
+        return $this->belongsTo(Tenant::class, 'assigned_flat_id');
+    }
+
+    public function bills()
+    {
+        return $this->hasMany(Bill::class);
+    }
 }
